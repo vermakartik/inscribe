@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Article - {{ article_object.title_text }}
+{% endblock %}
+
+{% block content %}
+    {% if article_object %}
+        <div class="article_details_container">
+            <div class="top_details">
+                <p class="pub_date">{{ article_object.published_date }}</p>
+                <h1 class="title_text">{{ article_object.title_text }}</h1>
+                {% if user.is_authenticated %}
+                    {% if request.user.is_superuser or article.author_text == request.user %}
+                        <a href="{% url 'article:edit' article_object.published_date article_object.slug_title_text %}"><i class="material-icons">edit</i></a>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class="article_text">{{ article_object.formatted_markdown | safe }}</div>
+        </div>
+    {% endif %}
+{% endblock %}

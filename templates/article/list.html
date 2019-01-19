@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Blogs {% endblock %}
+
+{% block content %}
+
+	<div class="article_list_container">
+		{% if object_list %}
+			<ul class="article_list_ul">
+				{% for article in object_list %}
+					<li class="article_item">
+						<a href="{% url 'article:details' article.published_date article.slug_title_text %}">
+							<img src="{% static 'media/images/temporary_image.png' %}">
+							<div class="details">
+								<div class="spanned">
+									<span class="author_text"><span>By </span>{{ article.author_text }}</span>
+									<span class="bullet">&bull;</span>
+									<span class="published_date">{{ article.published_date }}</span>
+								</div>
+								<h2 class="title_text">{{ article.title_text }}</h2>
+							</div>
+						</a>
+						<div class="float_icons">
+							{% if user.is_authenticated %}
+								{% if request.user.is_superuser or article.author_text == request.user %}
+									<a href="{% url 'article:edit' article.published_date article.slug_title_text %}"><i class="material-icons">edit</i></a>
+								{% endif %}
+							{% endif %}
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<div class="no_data_found">
+				<p>;-(<br />No Articles Yet </p>
+			</div>
+		{% endif %}
+	</div>
+
+{% endblock %}
+
+<script type="text/javascript" src="{% static 'js/article.js' %}"></script>
+

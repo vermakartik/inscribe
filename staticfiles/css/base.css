@@ -1,0 +1,653 @@
+/* theme */
+
+:root{
+	--primary_color: #f5f5f5;
+	--primary_variant: #ffffff;
+
+	--secondary_color: #d81b60;
+	--secondary_variant: #ff5c8d;
+
+	--surface_color: var(--primary_variant);
+	--error_color: #a30000;
+	--background_color: var(--primary_color);
+
+	--alternate_color_1: #2196f3;
+	--alternate_color_1_variant: #6ec6ff;
+
+	--text_light: #ffffff;
+	--text_dark: #000000;
+}
+
+
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+html, body{
+	background: var(--background_color);
+}
+
+nav{
+	font-family: "Passion one", cursive;
+}
+
+nav > div{
+	display: grid;
+	align-items: center;
+	grid-template-columns: 90% 10%;
+}
+
+.menu_image{
+	justify-self: end;
+	margin-right: 16px;
+	cursor: pointer;
+}
+
+.menu_image:hover {
+	filter: opacity(80%);
+}
+
+nav > div > div > img {
+	width: 24px;
+	height: 24px;
+}
+
+nav h1, nav a{
+	color: var(--secondary_color);
+	font-weight: 100;
+}
+
+nav h1{
+	font-size: 72px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+nav a{
+	text-decoration: none;
+}
+
+nav a{
+	display: block;
+	text-align: center;
+	font-size: 32px;
+	padding: 12px;
+}
+
+nav a:hover{
+	background: var(--secondary_color);
+	color: var(--text_light);
+}
+
+
+nav ul#menu_list{
+	display: none;
+}
+
+footer{
+	margin-top: 24px; 
+}
+
+footer hr{
+	border: 1px solid #666;
+	width: 50%;
+	margin: 0 auto;
+	color: #888;
+}
+
+footer p{
+	font-family: "Viga", sans-serif;
+	text-align: center;
+	color: #666;
+	padding: 8px 0px;
+}
+
+.some-options{
+	display: grid;
+	grid-template-columns: 24px auto 24px;
+	margin: 8px 0px;
+}
+
+.some-options ul{
+	grid-column: 2;
+}
+
+.some-options li{
+	padding: 0px;
+	display: inline-block;
+}
+.some-options li a{
+	display: flex;
+	align-items: center;
+	padding: 0px;
+	font-family: "viga", sans-serif;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding: 4px 8px;
+	color: var(--text_light);
+	background: var(--alternate_color_1); 
+	border-radius:4px;
+}
+
+.some-options li a p{
+	border-left: 0.5px solid rgba(255, 255, 255, 0.9);
+	padding-left: 8px;
+	margin-left: 2px;
+}
+
+.some-options li a:hover {
+	background: var(--alternate_color_1_variant);
+}
+
+/*---------------- about.html -------------------*/
+
+.profile_image_container	{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	padding: 8px;
+	position: relative;
+	margin: 24px auto;
+	background: var(--secondary_variant);
+}
+
+.profile_image_container img{
+	width: 100%;
+	position: relative;
+	top: 10px;
+	height: auto;
+	object-fit: cover;
+}
+
+.about_container{
+	text-align: center;
+	font-family: "Viga", sans-serif;
+	margin: 0px 24px;
+}
+
+/*----------------- list.html -------------------*/
+
+.article_list_container{
+	margin: 0px 24px;
+}
+
+.article_list_ul{
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: auto;
+	grid-row-gap: 16px;
+}
+
+.article_item{
+	width: 100%;
+	height: auto;
+	max-height: 480px;
+	position: relative;
+	border-radius: 8px;
+	background: var(--primary_variant);
+}
+
+.article_item a{
+	text-decoration: none;
+}
+
+.article_item img{
+	width: 100%;
+	height: auto;
+	border-radius: 8px 8px 0px 0px;
+}
+
+.article_item .details {
+	padding: 12px;
+}
+
+.article_item .spanned {
+	color: #888;
+	font-family: "Open sans", sans-serif;
+}
+
+.article_item .title_text{
+	font-family: "Passion one", cursive;
+	font-weight: 100;
+	font-size: 28px;
+	color: #666;
+}
+
+.article_item:hover{
+	background: var(--secondary_color);
+}
+
+.article_item:hover .spanned, .article_item:hover .title_text{
+	color: var(--text_light);
+}
+
+.no_data_found{
+	text-align: center;
+	font-family: "Passion one", cursive;
+	color: #888;
+	font-size: 48px;
+	padding: 28px 0px;
+}
+
+.float_icons{
+	position: absolute;
+	top: 8px;
+	right: 8px;
+}
+
+.float_icons a {
+	display: block;
+	padding: 6px 8px;
+	border-radius: 50%;
+	color: var(--secondary_color);
+}
+
+.float_icons a:hover{
+	background: var(--secondary_color);
+	color: var(--text_light);
+}
+
+/* ----------------- details.html ------------------ */
+
+.article_details_container{
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	margin: 24px 0px;
+}
+
+.article_details_container > *{
+	grid-column: 2;
+}
+
+.article_details_container .pub_date{
+	grid-column: 1;
+	font-family: "open sans", sans-serif;
+	font-size: 14px;
+	margin-left: 4px;
+	color: #444444;
+}
+
+.article_details_container .top_details{
+	display: grid;
+	grid-column: 2;
+	grid-template-columns: auto 64px;
+}
+
+.article_details_container .top_details > a{
+	text-align: right;
+	grid-column: 2;
+	align-self: center;
+	justify-self: end;
+	color: var(--secondary_color);
+	padding: 10px 12px;
+	border-radius: 24px;
+}
+
+.article_details_container .top_details > a:hover{
+	background: #e2e1e0;
+	color: var(--secondary_variant);
+}
+
+.article_details_container .title_text{
+	grid-column: 1;
+	font-family: "Passion one", cursive;
+	font-weight: 100;
+	font-size: 48px;
+	color: #444444;
+	margin: 4px 0px 16px 0px;
+}
+
+.article_details_container > .article_text {
+	font-family: "open sans", sans-serif;
+	color: #444444;
+	background: var(--primary_variant);
+	padding: 12px 8px;
+	border-radius: 4px;
+}
+
+/* ----------------- accounts page ----------------- */
+button[type='submit']{
+	background: var(--secondary_color);
+	padding: 8px 12px;
+	border: none;
+	border-radius: 4px;
+	font-size: 18px;
+	color: var(--text_light);
+	font-family: "viga", 'sans-serif';
+	text-transform: uppercase; 
+	cursor: pointer;
+}
+
+button[type='submit']:hover{
+	background: var(--secondary_variant);
+}
+
+.form_container{
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(5, auto);
+	margin: 48px 0px;
+	font-family: "viga", sans-serif;
+}
+
+.form_container > div {
+	box-sizing: border-box;
+	border-radius: 8px; 
+	grid-column: 2 / span 3;
+	background: var(--primary_variant);
+}
+
+
+input[type="text"], input[type="password"]{
+	box-sizing: border-box;
+	border: none;
+	width: 100%;
+	font-size: 16px;
+	border-bottom: 2px solid var(--secondary_color);
+	padding: 8px 8px;
+	border-radius: 8px 8px 0px 0px;
+	outline: none;
+}
+
+label{
+	display: block;
+	margin-bottom: 4px;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: var(--secondary_color);
+	padding-left: 4px;
+}
+
+input[type="text"]:hover, input[type="password"]:hover{
+	background: var(--primary_color);
+}
+
+.form_container p {
+	margin: 12px 0px;
+}
+
+.login_form h1 {
+	font-family: "Passion one", cursive;
+	font-weight: 100;
+	color: var(--secondary_color);
+	padding-left: 4px;
+	margin: 16px 0px;
+	text-align: center;
+}
+
+.login_form .right_align{
+	text-align: right;
+}
+
+.login_form button{
+	margin-top: 16px;
+}
+
+.login_form{
+	padding: 12px 12px;
+}
+
+
+/* --------------------- edit.html --------------------- */
+.create_article_container{
+	display: grid;
+	grid-template-columns: 24px auto 24px; 
+}
+
+.create_article_container label{
+	font-family: 'Passion one', sans-serif;
+	font-size: 20px;
+	font-weight: 100;
+	letter-spacing: 1px;
+	margin-top: 16px;
+}
+
+.create_article_container button{
+	right: 0;
+}
+
+.create_article_container > *{
+	grid-column: 2;
+}
+
+.create_article_container textarea{
+	box-sizing: border-box;
+	width: 100%;
+	height: 400px;
+	border: 2px solid red;
+	padding: 8px;
+	border-radius: 4px;
+	font-family: 'consolas', 'lucida console', monospace;
+}	
+
+.create_article_container input[type="text"]{
+	border: none;
+	font-family: "viga", sans-serif;
+}
+
+
+.create_article_container input[type="text"]:hover{
+	background: var(--surface_color);
+}
+
+.create_article_container .markdownx-preview{
+	box-sizing: border-box;
+	margin: 8px 0px;
+	width: 100%;
+	height: 400px;
+	padding: 8px;
+	word-wrap: break-word;
+	overflow: scroll;
+	font-family: 'open sans', sans-serif;
+}
+
+.create_article_container .markdownx-preview:before{
+	content: "Preview";
+	color: var(--secondary_color);
+	font-family: "viga", sans-serif; 
+	text-transform: uppercase;
+}
+
+
+/* ----------------------------- tablets and desktop -------------------------------- */
+@media only screen and (min-width: 768px){
+
+	nav{
+		display: grid;
+		align-items: center;
+		grid-template-columns: auto auto;
+	}
+	nav > div{
+		display: block;
+	}
+
+	nav a {
+		border-radius: 4px;
+		font-size: 28px;
+	}
+	
+	.menu_image{
+		display: none;
+	}
+
+	nav .menu_list a{
+		border-bottom: 4px solid transparent;
+	}
+
+	nav > div {
+		justify-self: left;
+		margin-left: 24px;
+	}
+
+	nav .menu_list a:hover{
+		color: var(--secondary_variant);
+		border-bottom: 4px solid var(--secondary_variant);
+	}
+	
+	nav ul#menu_list{
+		display: inherit;
+		list-style-type: none;
+		justify-self: end;
+		margin-right: 24px;
+	}
+	
+	nav ul#menu_list{
+		display: flex;
+	}
+
+	
+	/* ---------------------------- list.html -------------------------------- */
+	
+	.article_list_container{
+		margin: 0px;
+	}
+
+	.article_list_ul{
+		list-style-type: none;
+		display: grid;
+		grid-template-columns: 1fr 360px 360px 1fr;
+		grid-column-gap: 12px;
+		grid-row-gap: 12px;
+	}
+
+	.article_list_ul li:nth-child(2n+1){
+		grid-column-start: 2;
+		grid-column-end: 2;
+	}
+
+	.article_list_ul li:nth-child(2n){
+		grid-column-start: 3;
+		grid-column-end: 3;
+	}
+	
+	.article_item .details {
+		padding: 8px;
+	}
+	
+	.article_item .spanned {
+		color: #888;
+		font-family: "Open sans", sans-serif;
+	}
+	
+	.article_item .title_text{
+		font-family: "Passion one", cursive;
+		font-weight: 100;
+		font-size: 28px;
+		color: #666;
+	}
+	
+	.article_item:hover{
+		background: var(--secondary_color);
+	}
+	
+	.article_item:hover .spanned, .article_item:hover .title_text{
+		color: var(--text_light);
+	}
+	
+	.no_data_found{
+		text-align: center;
+		font-family: "Passion one", cursive;
+		color: #888;
+		font-size: 48px;
+		padding: 28px 0px;
+	}
+	
+	.float_icons{
+		position: absolute;
+		top: 8px;
+		right: 8px;
+	}
+	
+	.float_icons a {
+		display: block;
+		padding: 6px 8px;
+		border-radius: 50%;
+		color: var(--secondary_color);
+	}
+	
+	.float_icons a:hover{
+		background: var(--secondary_color);
+		color: var(--text_light);
+	}
+
+	/* ----------------------- about.html ---------------------- */
+	
+	.about_container{
+		display: grid;
+		grid-template-columns: auto 540px auto; 
+	}
+
+	.about_container > *{
+		grid-column-start: 2;
+		grid-column-end: 2; 
+	}
+	
+	/* ----------------- accounts page ----------------- */
+
+	.form_container{
+		position: relative;
+		display: grid;
+		grid-template-columns: auto 480px auto;
+		margin: 48px 0px;
+		font-family: "viga", sans-serif;
+	}
+
+	.form_container > div {
+		box-sizing: border-box;
+		border-radius: 8px; 
+		grid-column: 2;
+		background: var(--primary_variant);
+	}
+
+
+	input[type="text"], input[type="password"]{
+		box-sizing: border-box;
+		border: none;
+		width: 100%;
+		font-size: 16px;
+		border-bottom: 2px solid var(--secondary_color);
+		padding: 8px 8px;
+		border-radius: 8px 8px 0px 0px;
+		outline: none;
+	}
+
+	label{
+		display: block;
+		margin-bottom: 4px;
+		font-size: 16px;
+		text-transform: uppercase;
+		color: var(--secondary_color);
+		padding-left: 4px;
+	}
+
+	input[type="text"]:hover, input[type="password"]:hover{
+		background: var(--primary_color);
+	}
+
+	.form_container p {
+		margin: 12px 0px;
+	}
+
+	.login_form h1 {
+		font-family: "Passion one", cursive;
+		font-weight: 100;
+		color: var(--secondary_color);
+		padding-left: 4px;
+		margin: 16px 0px;
+		text-align: center;
+	}
+
+	.login_form .right_align{
+		text-align: right;
+	}
+
+	.login_form button{
+		margin-top: 16px;
+	}
+
+	.login_form{
+		padding: 12px 12px;
+	}
+
+}

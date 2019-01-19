@@ -1,0 +1,8 @@
+<div class="create_article_container"> 
+    <form method="POST">
+        <button type="submit">Save</button>
+        {% csrf_token %}
+        {{ form }}
+    </form>
+    {{ form.media }}
+</div>

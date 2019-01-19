@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Passion+One|Viga|Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<nav>
+		<div>
+			<h1>Inscribe</h1>
+			<div onclick="show_menu();" class="menu_image">
+				<img src="{% static 'media/images/menu.png' %}">
+			</div>
+		</div>
+		<ul id="menu_list">
+			<li><a href="{% url 'article:list' %}">Blogs</a></li>
+			<li><a href="{% url 'about' %}">About</a></li>
+			<li><a href="#">Contact</a></li>
+			<li class="resume_link"><a href="{% url 'resume' %}" target="_blank">Resume</a></li>
+			{% if user.is_authenticated %}
+			<li><a href="{% url 'logout' %}">Logout</a></li>
+			{% endif %}
+		</ul>
+		{% if user.is_authenticated and new_article_button == None %}
+		<div class="some-options">
+			<ul>
+				<li>
+					<a href="{% url 'article:new' %}">
+						<i class="material-icons image_icons">add</i><p>Add New Article</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		{% endif %}
+	</nav>
+	<main>
+		{% block content %}
+		{% endblock %}
+	</main>
+	<footer>
+		<hr>
+		<p>All rights reserved &copy; Kartik Verma. 2019</p>
+	</footer>
+	<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+</body>
+</html>
