@@ -174,6 +174,9 @@ footer p{
 
 .article_list_ul{
 	list-style-type: none;
+	display: grid;
+	grid-template-columns: auto;
+	grid-row-gap: 16px;
 }
 
 .article_item{
@@ -183,7 +186,6 @@ footer p{
 	position: relative;
 	border-radius: 8px;
 	background: var(--primary_variant);
-	margin: 16px auto;
 }
 
 .article_item a{
@@ -268,6 +270,7 @@ footer p{
 
 .article_details_container .top_details{
 	display: grid;
+	grid-column: 2;
 	grid-template-columns: auto 64px;
 }
 
@@ -412,6 +415,7 @@ input[type="text"]:hover, input[type="password"]:hover{
 	box-sizing: border-box;
 	width: 100%;
 	height: 400px;
+	border: 2px solid red;
 	padding: 8px;
 	border-radius: 4px;
 	font-family: 'consolas', 'lucida console', monospace;
@@ -493,8 +497,7 @@ input[type="text"]:hover, input[type="password"]:hover{
 	}
 
 	
-	/* ---------------------------- list.html -------------------------------- */
-	
+	/* ---------------------------- list.html -------------------------------- */	
 	.article_list_container{
 		margin: 0px;
 	}
@@ -502,8 +505,9 @@ input[type="text"]:hover, input[type="password"]:hover{
 	.article_list_ul{
 		list-style-type: none;
 		display: grid;
-		grid-template-columns: 1fr repeat(3, auto) 1fr;
+		grid-template-columns: 1fr 360px 360px 1fr;
 		grid-column-gap: 12px;
+		grid-row-gap: 12px;
 	}
 
 	.article_list_ul li:nth-child(2n+1){
@@ -580,13 +584,69 @@ input[type="text"]:hover, input[type="password"]:hover{
 	
 	/* ----------------- accounts page ----------------- */
 
-	.row-custom {
+	.form_container{
+		position: relative;
 		display: grid;
-		grid-template-columns: auto auto;
+		grid-template-columns: auto 480px auto;
+		margin: 48px 0px;
+		font-family: "viga", sans-serif;
 	}
 
-	.col1{
-		grid-column-start: 1;
-		grid-column-end: 1;
+	.form_container > div {
+		box-sizing: border-box;
+		border-radius: 8px; 
+		grid-column: 2;
+		background: var(--primary_variant);
 	}
+
+
+	input[type="text"], input[type="password"]{
+		box-sizing: border-box;
+		border: none;
+		width: 100%;
+		font-size: 16px;
+		border-bottom: 2px solid var(--secondary_color);
+		padding: 8px 8px;
+		border-radius: 8px 8px 0px 0px;
+		outline: none;
+	}
+
+	label{
+		display: block;
+		margin-bottom: 4px;
+		font-size: 16px;
+		text-transform: uppercase;
+		color: var(--secondary_color);
+		padding-left: 4px;
+	}
+
+	input[type="text"]:hover, input[type="password"]:hover{
+		background: var(--primary_color);
+	}
+
+	.form_container p {
+		margin: 12px 0px;
+	}
+
+	.login_form h1 {
+		font-family: "Passion one", cursive;
+		font-weight: 100;
+		color: var(--secondary_color);
+		padding-left: 4px;
+		margin: 16px 0px;
+		text-align: center;
+	}
+
+	.login_form .right_align{
+		text-align: right;
+	}
+
+	.login_form button{
+		margin-top: 16px;
+	}
+
+	.login_form{
+		padding: 12px 12px;
+	}
+
 }
